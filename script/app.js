@@ -1,4 +1,5 @@
 let display = document.getElementById('display');
+let history = document.getElementById('history');
 
 let buttons = Array.from(document.getElementsByClassName('button'));
 
@@ -19,9 +20,11 @@ buttons.map( button => {
                 break;
             case '=':
                 try{    
-                    display.innerText = eval(display.innerText);
+                    history.innerText = eval(display.innerText);
+                    display.innerText = '';
                 } catch {
-                    display.innerText = 'undefined!';
+                    history.innerText = 'undefined!';
+                    display.innerText = '';
                 }
                 break;
             default:
